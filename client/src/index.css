@@ -1,0 +1,368 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a0a0a;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas,
+    'Courier New', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+  border: 1px solid #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Terminal-style background */
+.terminal-bg {
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(0, 255, 136, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 0, 136, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(136, 0, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    #0a0a0a;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+.neon-green {
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+.neon-pink {
+  color: #ff0088;
+  text-shadow: 0 0 10px #ff0088;
+}
+
+.neon-purple {
+  color: #8800ff;
+  text-shadow: 0 0 10px #8800ff;
+}
+
+/* Matrix-style text */
+.matrix-text {
+  font-family: 'JetBrains Mono', monospace;
+  color: #00ff88;
+  text-shadow: 0 0 5px #00ff88;
+}
+
+/* Cyber grid background */
+.cyber-grid {
+  background-image: linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch {
+  animation: glitch 0.3s infinite;
+}
+
+/* Holographic effect */
+.holographic {
+  background: linear-gradient(
+    45deg,
+    #ff0088,
+    #8800ff,
+    #0088ff,
+    #00ff88,
+    #ff8800,
+    #ff0088
+  );
+  background-size: 400% 400%;
+  animation: holographic 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes holographic {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Cyber button */
+.cyber-button {
+  position: relative;
+  background: rgba(0, 255, 136, 0.1);
+  border: 2px solid #00ff88;
+  color: #00ff88;
+  padding: 12px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  font-weight: 600;
+  border-radius: 8px;
+  min-height: 48px;
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+.cyber-button:hover {
+  box-shadow: 0 0 20px #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+/* Terminal window */
+.terminal-window {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+  background: #2a2a2a;
+  padding: 12px 16px;
+  border-bottom: 1px solid #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.terminal-dot.red {
+  background: #ff5f56;
+}
+.terminal-dot.yellow {
+  background: #ffbd2e;
+}
+.terminal-dot.green {
+  background: #27ca3f;
+}
+
+/* Data stream effect */
+@keyframes data-stream {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.data-stream {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #00ff88, transparent);
+  animation: data-stream 3s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Loading animation */
+@keyframes cyber-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cyber-loading {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #333;
+  border-top: 2px solid #00ff88;
+  border-radius: 50%;
+  animation: cyber-loading 1s linear infinite;
+}
+
+/* Progress bar */
+.cyber-progress {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cyber-progress-bar {
+  background: linear-gradient(90deg, #00ff88, #0088ff);
+  height: 100%;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.cyber-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Agent status indicators */
+.agent-online {
+  color: #00ff88;
+  text-shadow: 0 0 5px #00ff88;
+}
+
+.agent-working {
+  color: #ff8800;
+  text-shadow: 0 0 5px #ff8800;
+}
+
+.agent-complete {
+  color: #0088ff;
+  text-shadow: 0 0 5px #0088ff;
+}
+
+.agent-error {
+  color: #ff0088;
+  text-shadow: 0 0 5px #ff0088;
+}
+
+/* Hover effects */
+.cyber-hover {
+  transition: all 0.3s ease;
+}
+
+.cyber-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cyber-grid {
+    background-size: 15px 15px;
+  }
+
+  .cyber-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
