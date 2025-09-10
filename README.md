@@ -16,6 +16,9 @@ This system accepts high-level business requests in plain language and uses mult
 
 ## 🏗️ Architecture
 
+### Project Architecture Video
+[Watch the loom walkthrough] https://www.loom.com/share/fc18f75ebf0745db82f7d43f1b1e68c5?sid=57dd0c55-cbb6-4f5e-8cdf-330e503fc8c7
+
 ### Tech Stack
 
 **Frontend:**
